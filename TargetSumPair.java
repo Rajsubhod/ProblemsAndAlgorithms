@@ -1,3 +1,5 @@
+// Return the pairs or the number of pairs whose sum result in 7 or given value
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
