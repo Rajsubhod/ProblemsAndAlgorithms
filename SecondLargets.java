@@ -9,9 +9,29 @@ public class SecondLargets {
     }   
 
     //can only be used if there is no duplicate values
-    public int fun(int[] arr){
+    public int fun1(int[] arr){
         Arrays.sort(arr);
         return arr[arr.length-2];
         
+    }
+    //With duplicate values
+    public int fun2(int[] arr){
+        int max = Integer.MIN_VALUE;
+        for(int i:arr){
+            if(i>max){
+                max=i;
+            }
+        }
+        return max;    
+    }
+    public int fun(int[] arr){
+        int max = fun2(arr);
+        for(int i=0;i<arr.length-1;i++){
+            if(arr[i]==max){
+                arr[i]=Integer.MIN_VALUE;
+            }
+        }
+        max = fun2(arr);
+        return max;
     }
 }
