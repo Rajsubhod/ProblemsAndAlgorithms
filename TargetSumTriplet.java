@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class TargetSumTriplet {
     public static void main(String[] args) {
         long startTime = System.nanoTime();
-        int[] arr = {2, 1, 5, 7, 8, 11, 3, 4};
+        int[] arr = {2, 1, 5, 7, 8, 11, 3, 4, 0};
         //System.out.println(Arrays.toString(new TargetSum().fun(arr)));
         int[][] result = new TargetSumTriplet().fun(arr);
         Arrays.stream(result).forEach(e->System.out.println(Arrays.toString(e)));
