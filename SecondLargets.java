@@ -1,4 +1,4 @@
-// return an array that has samllest and largest values from a given array
+// return an array that has second largest values from a given array
 
 import java.util.Arrays;
 
