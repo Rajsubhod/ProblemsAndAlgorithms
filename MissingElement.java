@@ -1,8 +1,11 @@
-//Find the Missing Elemente in the sorted Array
+//Find the Missing Elementes in the Given Array
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Hashtable;
 import java.util.List;
 
+//Finding missing element only for sorted array
 class FindSorted{
     // Method - Finding the sum of n elements and sum of first n natural numbers
     // Only applicable if the array contains elements of First n natural numbers i.e. {1,2,3...n}
@@ -45,21 +48,44 @@ class FindSorted{
             }
         }
         return list;
-    }
-    
-    
+    }    
 }
+//Finding missing element in unsortd array
 class FindUnSorted{
 
+    //By converting the Array into sorted array 
+    //Time complexity O(n*p) where p is time to sort the array worst case O(n^2) best case O(nlogn)
+    public static List<Integer> fun3(int[] arr) {
+        Arrays.sort(arr);
+        return new FindSorted().fun3(arr);
+    }
+    //By using HashTable 
+    //Time complexity O(n)
+    public static List<Integer> fun4(int[] arr) {
+        int max=Arrays.stream(arr).max().getAsInt();
+        int[] hash=new int[max+1];
+        List<Integer> list=new ArrayList<>();
+        for(int i=0;i<arr.length;i++){
+            hash[arr[i]]++;
+        }
+        for(int i=1;i<hash.length;i++){
+            if(hash[i]==0){
+                list.add(i);
+            }
+        }
+        return list;
+    }
 }
 public class MissingElement { 
     public static void main(String[] args) {
         int[] arr={1,2,3,4,6,7,8,9};
         int[] arr2={6,7,8,9,10,12,13,14};
         int[] arr3={6,7,8,10,11,14,15,16,17,19};
+        int[] arr4={4,3,5,2,6,7,1,9,11,14,15,12};
         System.out.println(new FindSorted().fun(arr));
         System.out.println(new FindSorted().fun2(arr2));
         System.out.println(new FindSorted().fun3(arr3));
-
+        //System.out.println(FindUnSorted.fun3(arr4));
+        System.out.println(FindUnSorted.fun4(arr4));
     }
 }
