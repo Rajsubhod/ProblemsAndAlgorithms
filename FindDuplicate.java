@@ -8,7 +8,7 @@ import java.util.Map;
 public class FindDuplicate {
     public static void main(String[] args) {
         int[] arr={1,2,3,4,4,5,5,6,7,8,8,8,9};
-        DuplicateSorted.fun2(arr);
+        DuplicateSorted.fun3(arr);
     }
 }
 class DuplicateSorted {
@@ -29,6 +29,17 @@ class DuplicateSorted {
                 while(arr[j]==arr[i]) j++;
                 System.out.println(arr[i]+" "+(j-i));
                 i=j-1;
+            }
+        }
+    }
+    public static void fun3(int[] arr){
+        int[] hash=new int[arr.length+1];
+        for(int num:arr){
+            hash[num]++;
+        }
+        for(int i=0;i<hash.length;i++){
+            if(hash[i]>1){
+                System.out.println(i+" "+hash[i]);
             }
         }
     }
