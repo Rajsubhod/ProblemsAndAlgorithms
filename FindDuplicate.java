@@ -1,5 +1,6 @@
 //Find Duplicate elements in an array and return the number of duplicates
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -32,6 +33,7 @@ class DuplicateSorted {
             }
         }
     }
+    //using hashing technique
     public static void fun3(int[] arr){
         int[] hash=new int[arr.length+1];
         for(int num:arr){
@@ -63,6 +65,18 @@ class DuplicateUnSorted {
             if(value>1){
                 System.out.print(ele.getKey()+" "+value);
                 System.out.println();
+            }
+        }
+    }
+    //Same as the one in Sorted but with size of maximum element
+    public static void fun2(int[] arr){
+        int[] hash=new int[Arrays.stream(arr).max().getAsInt()];
+        for(int num:arr){
+            hash[num]++;
+        }
+        for(int i=0;i<hash.length;i++){
+            if(hash[i]>1){
+                System.out.println(i+" "+hash[i]);
             }
         }
     }
