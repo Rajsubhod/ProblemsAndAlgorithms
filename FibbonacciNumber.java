@@ -10,12 +10,15 @@ public class FibbonacciNumber {
             series(num);
             memoization=new int[num+1];
             System.out.println();
+            //This will give kth term from starting of series at 1
             System.out.println(fun2(num));
+            //This will give kth term from starting of series at 0
+            System.out.println(fun2(num-1));
         }
     }
 
     private static void series(int num) {
-        int a = 1;
+        int a = 0;
         int b = 1;
         System.out.print(a+" ");
         System.out.print(b+" ");
@@ -44,12 +47,13 @@ public class FibbonacciNumber {
             if(memoization[num-2]==0) memoization[num-2]=fun2(num-2);
             if(memoization[num-1]==0) memoization[num-1]=fun2(num-1);
         }  
+        memoization[num]=memoization[num-2]+memoization[num-1];
         //IF THE SERIES START FROM 1
-        return memoization[num-2]+memoization[num-1];
+        return memoization[num];
     }
     //Time complexity O(log(n)) ----- very usefull
     private static int fun3(int num) {
-        
+
         //IF THE SERIES START FROM 1
         return -1;
     }
