@@ -47,4 +47,10 @@ public class FibbonacciNumber {
         //IF THE SERIES START FROM 1
         return memoization[num-2]+memoization[num-1];
     }
+    //Time complexity O(log(n)) ----- very usefull
+    private static int fun3(int num) {
+        
+        //IF THE SERIES START FROM 1
+        return -1;
+    }
 }
