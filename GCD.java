@@ -3,7 +3,7 @@
 public class GCD {
     //Euclid's algorithm approach -> GCD(x,y)=GCD(y,x%y) & GCD(x,0)=x
     //Time complexity O(log(min(x,y))) ---- most optimized approach
-    private static int gcd(int x, int y) {
+    static int gcd(int x, int y) {
         if(y==0){
             return x;
         }
