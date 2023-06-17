@@ -2,7 +2,7 @@
 //constraints 0<= x,y <=1e6(10^6)
 public class GCD {
     //Euclid's algorithm approach -> GCD(x,y)=GCD(y,x%y) & GCD(x,0)=x
-
+    //Time complexity O(log(min(x,y))) ---- most optimized approach
     private static int gcd(int x, int y) {
         if(y==0){
             return x;
@@ -10,7 +10,7 @@ public class GCD {
         return gcd(y, x%y);
     }
     // Long division Iterative approach 
-    //TIme complexity O(min(x,y)) ---- a bit better still not good approach
+    //Time complexity O(min(x,y)) ---- a bit better still useless approach
     private static int fun2(int x, int y) {
         int divisor=Math.min(x, y);
         int dividend=Math.max(x,y);
@@ -26,7 +26,7 @@ public class GCD {
         return divisor;
     }
     //Brute force approach 
-    //TIme complexity O(min(x,y)) ---- useless approach
+    //Time complexity O(min(x,y)) ---- useless approach
     private static int fun(int x, int y) {
         for(int i=(int)Math.min(x,y);i>0;i--){
             if(x%i==0 && y%i==0){
