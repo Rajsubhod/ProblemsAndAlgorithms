@@ -47,6 +47,7 @@ public class TargetSumPair {
         return list.toArray(new int[0][]);
     }
     //Forted sorted array can use two pointer
+    //Time complexity <= O(n)
     public static int[][] fun3(int[] arr){
         ArrayList<int[]> list = new ArrayList<>();
         int i=0,j=arr.length-1;
