@@ -1,13 +1,35 @@
 //Find the Kth number in the fibbonacci series
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FibbonacciNumber {
-     //Time complexity O(log(n)) ----- very usefull
-    private static int fun3(int num) {
-
+    //Matrix Exponentiation method -> Binary Exponentiation * Matrix Multiplication
+    // O(log(n))                   ->       O(log(num))     * num^3 ==> O(k^3(log(k))) = O(log(n1))
+    //Time complexity O(log(n)) ----- very usefull
+    private static int matrixExponentiation(int num) {
+        int [][] con = {{1,1},{1,0}};
+        if (num <= 0)
+            return 0;
+        if (num == 1)
+            return 1;
+        int [][] ans = binaryExponentiation(con,num-1);
+        System.out.println(Arrays.deepToString(ans));
+        //IF THE SERIES START FROM 0
+        return ans[0][1];
         //IF THE SERIES START FROM 1
-        return -1;
+        //return ans[0][0];
+    }
+    private static int[][] binaryExponentiation(int[][] con, int num) {
+        if(num==1){
+            return con;
+        }
+        int[][] temp=binaryExponentiation(con, num/2);
+        int[][] ans=MatrixMultiplication.fun(temp, temp);
+        if(num%2==1){
+            ans=MatrixMultiplication.fun(ans,con);
+        }
+        return ans;
     }
     //Using Memoization (Dynamic Programming) with recursion
     //Time complexity O(n) ----- a bit usefull
@@ -23,6 +45,8 @@ public class FibbonacciNumber {
         memoization[num]=memoization[num-2]+memoization[num-1];
         //IF THE SERIES START FROM 1
         return memoization[num];
+        //IF THE SERIES START FROM 0
+        //return memoization[num-1];
     }
     //Finding the nth fibonnacc term and printing the series 
     //Time complexity O(n)
@@ -54,10 +78,8 @@ public class FibbonacciNumber {
             series(num);
             memoization=new int[num+1];
             System.out.println();
-            //This will give kth term from starting of series at 1
             System.out.println(fun2(num));
-            //This will give kth term from starting of series at 0
-            System.out.println(fun2(num-1));
+            System.out.println(matrixExponentiation(num));
         }
     }
 }
