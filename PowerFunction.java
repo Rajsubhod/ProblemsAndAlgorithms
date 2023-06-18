@@ -11,6 +11,7 @@ public class PowerFunction {
         if(q<=0) return 1;
         return p*fun(p, --q);
     }
+    //Binary Exponentiation
     //Time complexity O(log q) ---- more better
     private static int fun2(int p, int q) {
         int res=0;
