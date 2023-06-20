@@ -1,11 +1,11 @@
 /*
- * Matrix multiplication using Divide And Conqure method
+ * Matrix multiplication using Strassens Multiplication method
  */
-package MatrixMultiplication;
+package StrassenMatrixMultiplication;
 
 import java.util.Arrays;
 
-public class DivideAndConqure {
+public class StrassensMultiplication {
     public static void main(String[] args) {
         int[][] M1={{1,2,3},{3,2,1},{2,1,3}};
         int[][] M2={{4,5,6},{6,5,4},{5,4,6}};
@@ -13,7 +13,6 @@ public class DivideAndConqure {
     }
 
     private static Object[] fun(int[][] m1, int[][] m2) {
-
         return null;
     }
 }
