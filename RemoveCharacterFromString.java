@@ -12,6 +12,19 @@ public class RemoveCharacterFromString{
         return ans;
         
     }
+    private static String funR2A(String str) {
+        if(str.length()==0){
+            return "";
+        }
+        String ans=funR2(str.substring(1));
+        if(str.charAt(0)!='a'){
+            return str.charAt(0)+ans;
+        }
+        else{
+            return ans;
+        }
+        
+    }
     //Using recursion
     private static String funR(String str,int i) {
         if(i==str.length()){
@@ -40,6 +53,7 @@ public class RemoveCharacterFromString{
         System.out.println(funI(str));
         System.out.println(funR(str,0));
         System.out.println(funR2(str));
+        System.out.println(funR2A(str));
     }
 
 }
