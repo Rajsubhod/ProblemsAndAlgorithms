@@ -4,7 +4,8 @@ public class ReverseString {
         String str="Rajdeep Mukherjee";
         System.out.println(funR(str));
     }
-
+    //Using recursion
+    //Time complexity --- O(n^2)
     private static String funR(String str) {
         if(str==""){
             return "";
