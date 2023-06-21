@@ -49,7 +49,7 @@ public class RemoveCharacterFromString{
         return ans;
     }
       public static void main(String[] args) {
-        String str="Saaasas";
+        String str="SaaaW sas";
         System.out.println(funI(str));
         System.out.println(funR(str,0));
         System.out.println(funR2(str));
