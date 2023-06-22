@@ -26,7 +26,9 @@ public class PrintSubsequence {
             ans.add(ss);
             ans.add(c+ss);
         }
+        //this uses default comparator which compares via character order
         //Collections.sort(ans);
+        //This does sorting via custom comparator that compares string length and then via character order
         Comparator<String> comparator = Comparator.comparingInt(String::length)
                 .thenComparing(Comparator.naturalOrder());
         Collections.sort(ans, comparator);
