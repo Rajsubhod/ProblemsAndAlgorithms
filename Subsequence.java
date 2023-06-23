@@ -42,7 +42,7 @@ class ArrayListSubsequence {
 
 //Given a string print all subsequences of the string
 class PrintSubsequence {
-    //Time complexity --- O(n)
+    //Time complexity --- O(2^n)
     public static void fun(String str,String remString) {
         if(str.length()==0){
             System.out.print(remString+ " ");
