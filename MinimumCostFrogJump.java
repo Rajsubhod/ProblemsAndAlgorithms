@@ -6,28 +6,23 @@
 public class MinimumCostFrogJump {
     public static void main(String[] args) {
         int[] arr = {10,30,40,20};
-        System.out.println(fun(arr,0,0));
+        System.out.println(fun(arr,0));
     }
-
-    private static int fun(int[] arr,int sum,int curr) {
-        if(curr+2>arr.length-1){
+    //Time compexity --- O(2^n)
+    private static int fun(int[] arr, int idx) {
+        if (idx == arr.length - 1) {
             return 0;
         }
         //Find the distance from ith to i+1th stone
-        int dis1=Math.abs(arr[curr]-arr[curr+1]);
+        int dis1 = Math.abs(arr[idx]-arr[idx+1])+fun(arr,idx+1);
+        //If the idx is second last stone of the array there is no i+2th stone thus return dist1
+        if(idx == arr.length-2){
+            return dis1;
+        }
         //Find the distance from ith to i+2th stone
-        int dis2=Math.abs(arr[curr]-arr[curr+2]);
-        sum = Math.min(dis1, dis2);
-        int smallSum=0;
-        if(dis1==dis2){
-            smallSum=fun(arr,sum,2);
-        }
-        else if(dis1<dis2){
-            smallSum=fun(arr,sum,1);
-        }
-        else{
-            smallSum=fun(arr,sum,2);
-        }
-        return sum+smallSum;
+        int dis2 = Math.abs(arr[idx]-arr[idx+2])+fun(arr,idx+2);
+        
+        //return minimum of distance 1 and 2 
+        return Math.min(dis1, dis2);
     }
 }
