@@ -1,5 +1,5 @@
 //create and use selection sort
-//Bubble sort is not stable sort
+//Selection sort is not stable sort
 import java.util.Arrays;
 
 public class SelectionSort {
