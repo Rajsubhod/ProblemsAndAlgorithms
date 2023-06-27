@@ -1,5 +1,5 @@
 //create and use selection sort
-//Insertion sort is not stable sort
+//Insertion sort is stable sort
 import java.util.Arrays;
 
 public class InsertionSort {
