@@ -1,5 +1,5 @@
 //create and use bubble sort
-
+//Bubble sort is stable sort
 import java.util.Arrays;
 
 public class BubbleSort {
