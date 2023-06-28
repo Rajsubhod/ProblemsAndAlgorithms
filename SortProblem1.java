@@ -8,7 +8,8 @@ public class SortProblem1 {
         fun(arr);
         System.out.println(Arrays.toString(arr));
     }
-    
+    //Bubble sort has been used for this problem
+    //Time complexity --- O(n) -> Best Case | O(n^2) -> Average & Worst Case
     private static void fun(int[] arr) {
         for(int i=0;i<arr.length-1;i++){
             boolean flag = false;
