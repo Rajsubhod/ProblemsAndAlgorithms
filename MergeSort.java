@@ -1,10 +1,11 @@
 //create and use merge sort
 //merge sort is stable sort
-
+//merge sort is not inplace 
 import java.util.Arrays;
 
 public class MergeSort {
-
+    //Time Complexity --- n * logn -> O(nlogn) -> Best, Averge,Worst Case 
+    //Space Complexity --- O(n)
     private static void mergesort(int[] arr, int l, int r) {
         if(l>=r){ return; }
 
@@ -16,7 +17,8 @@ public class MergeSort {
         merge(arr,l,mid,r);
 
     }
-
+    //Time Complexity to merge --- O(n)
+    //Space complexity --- O(n)
     private static void merge(int[] arr, int l, int mid, int r) {
         int left_arr_size = mid-l+1;
         int right_arr_size = r-mid;
@@ -31,7 +33,7 @@ public class MergeSort {
         k=l;
 
         while(i<left_arr_size && j<right_arr_size){
-            if(left_arr[i]<right_arr[j]){
+            if(left_arr[i]<=right_arr[j]){
                 arr[k]=left_arr[i];
                 k++;
                 i++;
@@ -46,8 +48,30 @@ public class MergeSort {
         while(j<right_arr_size){
             arr[k++]=right_arr[j++];
         }
-
-
+    }
+    //This is not mainly used due to complexity
+    //Time Complexity to merge --- O(n)
+    //Space complexity --- O(n)
+    private static void merge2(int[] arr, int l, int mid, int r) {
+        int[] left_arr = Arrays.copyOfRange(arr, l, mid+1);
+        int[] right_arr = Arrays.copyOfRange(arr, mid+1, r+1);
+        int i=0,j=0,k=l;
+        while(i<left_arr.length && j<right_arr.length){
+            if(left_arr[i]<right_arr[j]){
+                arr[k]=left_arr[i];
+                k++;
+                i++;
+            }
+            else{
+                arr[k++]=right_arr[j++];
+            }
+        }
+        while(i<left_arr.length){
+            arr[k++]=left_arr[i++];
+        }
+        while(j<right_arr.length){
+            arr[k++]=right_arr[j++];
+        }
     }
      public static void main(String[] args) {
         int[] arr = {3,2,4,5,1};
