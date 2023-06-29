@@ -2,9 +2,12 @@
 //merge sort is not stable sort
 //merge sort is inplace 
 import java.util.Arrays;
+import java.util.Random;
 
 public class QuickSort {
     //Time Complexity --- O(nlogn) -> Best, Average Case | O(n^2) -> Worst Case
+    /*This O(n^2) for worst case can be optimize by taking pivot ranomdly and not the start position */
+    //Space Complexity --- O(logn) -> Best, Average , Worst Case
     private static void quicksort(int[] arr, int start, int end) {
         if(start>=end){
             return;
@@ -13,8 +16,11 @@ public class QuickSort {
         quicksort(arr, start, pat_idx-1);
         quicksort(arr, pat_idx+1, end);
     }
+    //Time Complexity --- O(n)
     private static int partition(int[] arr, int start, int end) {
-        int pivot = arr[start];
+        //int pivot = arr[start];
+        Random random = new Random();
+        int pivot = random.nextInt(end-start+1)+start;
         int count = 0;
         //Finding the pivot index where all left of pivot is smaller and right bigger
         for(int i=start+1;i<arr.length;i++){
