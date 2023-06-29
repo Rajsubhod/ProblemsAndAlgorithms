@@ -1,6 +1,10 @@
+//create and use merge sort
+//merge sort is not stable sort
+//merge sort is inplace 
 import java.util.Arrays;
 
 public class QuickSort {
+    //Time Complexity --- O(nlogn) -> Best, Average Case | O(n^2) -> Worst Case
     private static void quicksort(int[] arr, int start, int end) {
         if(start>=end){
             return;
@@ -12,6 +16,7 @@ public class QuickSort {
     private static int partition(int[] arr, int start, int end) {
         int pivot = arr[start];
         int count = 0;
+        //Finding the pivot index where all left of pivot is smaller and right bigger
         for(int i=start+1;i<arr.length;i++){
             if(arr[i]<=pivot){
                 count++;
@@ -20,7 +25,7 @@ public class QuickSort {
         int pivot_idx = start+count;
         swap(arr,start,pivot_idx);
         int i=start,j=end;
-
+        //sorting out the left and right elements of the pivot
         while(i<pivot_idx && j>pivot_idx){
             while(arr[i]<=pivot) i++;
             while(arr[j]>pivot) j--;
