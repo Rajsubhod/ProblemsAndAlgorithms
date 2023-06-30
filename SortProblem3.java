@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class SortProblem3 {
-
+    //Time Complexity --- O(n)
     public static void sort(int[] arr){
         int i = 0, j = arr.length-1;
         int x=-1,y=-1;
@@ -23,8 +23,8 @@ public class SortProblem3 {
                 return;
 
             }
-            if(f1 == false) i++;
-            if(f2 == false) j--;
+            if(!f1) i++;
+            if(!f2) j--;
         }
     }
 
