@@ -8,15 +8,23 @@ public class SortProblem4 {
     //Space Complexity --- O(1)
     private static void sort(int[] arr) {
         int i = 0, j = arr.length-1;
-        while(i<=j){
-           if(arr[i]>0 && arr[j]<0){
+        // while(i<=j){
+        //    if(arr[i]>0 && arr[j]<0){
+        //     swap(arr, i, j);
+        //     i++;
+        //     j--;
+        //    }
+        //    if(arr[i]<0) i++;
+        //    if(arr[j]>0) j--;
+        // }
+        while(i<j){
+            while(arr[i]<0) i++;
+            while(arr[j]>=0) j--;
+            if(arr[i]>0 && arr[j]<0){
             swap(arr, i, j);
             i++;
             j--;
            }
-           if(arr[i]<0) i++;
-           if(arr[j]>0) j--;
-
         }
     }
     static void swap (int[] arr ,int i ,int j) {
