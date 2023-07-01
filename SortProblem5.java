@@ -3,6 +3,8 @@
 import java.util.Arrays;
 
 public class SortProblem5 {
+    //Time Complexity --- O(n)
+    //Space Complexity --- O(k) -> k is extra space ~ O(n)
     static void sort(int[] arr){
         int[] count = new int[Arrays.stream(arr).max().getAsInt()+1];
         for(int i=0;i<arr.length;i++){
