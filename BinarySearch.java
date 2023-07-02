@@ -6,6 +6,7 @@ public class BinarySearch {
         System.out.println(fun2(arr2,8));
     }
     // Binary Search using recursion
+    //Time Complexity --- O(logn)
     private static int fun(int[] arr, int l,int h,int i) {
         if(l<=h){
             int mid=(l+h)/2;
@@ -22,6 +23,7 @@ public class BinarySearch {
         return -1;
     }
     // Binary Search using Loops iterative
+    //Time Complexity --- O(logn)
     private static int fun2(int[] arr, int i){
         int l=0;
         int h=arr.length;
