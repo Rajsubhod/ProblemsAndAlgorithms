@@ -5,7 +5,7 @@ public class LinearSearch {
         System.out.println(fun(arr, 0, 8));
         System.out.println(funL(arr2,8));
     }
-
+    //Time Complexity --- O(n)
     private static int fun(int[] arr, int i, int j) {
         if(i==arr.length){
             return -1;
@@ -17,6 +17,7 @@ public class LinearSearch {
         return ans;
 
     }
+    //Time Complexity --- O(n)
     private static int funL(int[] arr, int j) {
         for(int i=0;i<arr.length-1;i++){
             if(arr[i]==j){
