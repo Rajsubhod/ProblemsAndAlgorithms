@@ -1,4 +1,4 @@
-//Given a rotated sorted array find the minimum value of the array
+//Given a rotated sorted array with unique elements find the minimum value of the array
 
 import java.util.Arrays;
 import java.util.Random;
@@ -14,7 +14,7 @@ public class SearchProblem3 {
         System.out.println(fun(arr));
     }
     //Time Complexity --- O(logn)
-    private static int fun(int[] arr) {
+    public static int fun(int[] arr) {
         int low = 0;
         int high = arr.length-1;
         int min = Integer.MAX_VALUE;
