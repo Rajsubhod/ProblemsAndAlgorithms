@@ -4,7 +4,7 @@ public class SearchProblem2 {
         int x = 24;
         System.out.println(fun(x));
     }
-
+    //Time Complexity --- O(logn)
     private static int fun(int x) {
         int low = 0;
         int high = x;
