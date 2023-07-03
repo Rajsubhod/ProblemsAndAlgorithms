@@ -14,29 +14,25 @@ public class SearchProblem4 {
             if(arr[mid]==target){
                 return mid;
             }
-            else{
-                if(arr[mid]<arr[end]){ // One Sorted part of array 
-                    if(arr[mid]<target && arr[end]>=target){ //target lies within this range
-                        start = mid+1;
-                    }
-                    else{
-                        end = mid-1;
-                    }
+            else if(arr[mid]<arr[end]){ // mid to end sorted
+                if(arr[mid]<target && arr[end]>=target){ //target lies within this range
+                start = mid+1;
                 }
-                else{ // Other Sorted part of array
-                    if(arr[start]<=target && arr[mid]>target){ //target lies within this range
-                        end = mid-1;
-                    }
-                    else{
-                        start = mid+1;
-                    }
+                else{
+                    end = mid-1;
                 }
             }
-        }
-        
+            else{ // start to mid sorted
+                if(arr[start]<=target && arr[mid]>target){ //target lies within this range
+                    end = mid-1;
+                }
+                else{
+                    start = mid+1;
+                }
+            }
+        }        
         return -1;
     }
-
 
     //Time Complexity --- O(logn^2) -> Best Case | O(logn^3) -> Average,Worst Case
     private static int fun1(int[] arr , int target) {
