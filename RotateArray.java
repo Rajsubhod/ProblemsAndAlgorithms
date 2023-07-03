@@ -11,6 +11,7 @@ public class RotateArray {
         System.out.println(Arrays.toString(new RotateArray().funR(Arrays.copyOf(arr, arr.length),k%arr.length)));
     }
     //Rotation anticlockwise or left rotation
+    //Time Complexity --- O(n)
     public int[] funL(int[] arr,int k) {
         if(k>0){
             int num =arr[arr.length-1];
@@ -23,7 +24,8 @@ public class RotateArray {
         return arr;
     }
     //Rotation clockwise or right rotation
-    private int[] funR(int[] arr,int k) {
+    //Time Complexity --- O(n)
+    public int[] funR(int[] arr,int k) {
         if(k>0){
             int num =arr[0];
             for(int l = 0;l<arr.length-1;l++){
