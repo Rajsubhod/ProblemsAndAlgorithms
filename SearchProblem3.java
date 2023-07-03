@@ -30,6 +30,7 @@ public class SearchProblem3 {
                 }
             */
             if(arr[mid]<=arr[high]){
+                //This Condition checks if the current mid is minimum than the last one
                 if(arr[mid]<min) min = mid;
                 high = mid-1;
             }
