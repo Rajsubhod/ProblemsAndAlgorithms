@@ -3,7 +3,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class SearchProblem5 {
-
+    
+    //Time Complexity --- O(logn)
      private static int fun(int[] arr, int target) {
         int start = 0;
         int end = arr.length-1;
@@ -16,16 +17,16 @@ public class SearchProblem5 {
                 start++;
                 end--;
             }
-            else if(arr[mid] <= arr[end]){
-                if(arr[mid]<target && arr[end]>=target){
+            else if(arr[mid] <= arr[end]){ // mid to end sorted
+                if(arr[mid]<target && arr[end]>=target){ //target lies within this range
                     start = mid+1;
                 }
                 else{
                     end = mid-1;
                 }
             }
-            else{
-                if(arr[start]<=target && arr[mid]>target){
+            else{ // start to mid sorted
+                if(arr[start]<=target && arr[mid]>target){ //target lies within this range
                     end = mid -1;
                 }
                 else{
