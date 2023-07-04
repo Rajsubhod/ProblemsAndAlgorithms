@@ -26,7 +26,7 @@ public class BinarySearch {
     // Binary Search using Loops iterative
     //Time Complexity --- O(logn)
     //Space Complexity --- O(1)
-    private static int fun2(int[] arr, int i){
+    public static int fun2(int[] arr, int i){
         int l=0;
         int h=arr.length;
         while(l<=h){
