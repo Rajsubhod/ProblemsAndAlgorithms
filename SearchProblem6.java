@@ -30,6 +30,7 @@ public class SearchProblem6 {
         }
         return false;
     }
+    
     //Time Complexity --- O(n*logm)
     private static int fun1(int[][] arr, int x) {
         int i=0;
