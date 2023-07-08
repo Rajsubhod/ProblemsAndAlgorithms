@@ -13,7 +13,7 @@
 public class ImplementLowerBound {
     public static void main(String[] args) {
         int[] arr = {3,5,8,15,19};
-        int x = 9;
+        int x = 21;
         System.out.println(lowerBond(arr,x));
     }
 
@@ -44,10 +44,10 @@ public class ImplementLowerBound {
                 end=mid-1;
             }
         }
-        if(arr[ans]==x){
-            return ans;
+        if(ans>arr.length-1 || arr[ans]!=x){
+            return -1;
         }
-        return -1;
+        return ans;
     }
     
 }
