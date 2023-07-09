@@ -10,7 +10,7 @@ public class SearchProblem1 {
     //Time Complexity --- O(logn)
     private static int funF(int[] arr, int i) {
         int l=0;
-        int h=arr.length;
+        int h=arr.length-1;
         int occurance = -1;
         while(l<=h){
             int mid=l+(h-l)/2;
@@ -31,7 +31,7 @@ public class SearchProblem1 {
     //Time Complexity --- O(logn)
     private static int funL(int[] arr, int i) {
         int l=0;
-        int h=arr.length;
+        int h=arr.length-1;
         int occurance = -1;
         while(l<=h){
             int mid=l+(h-l)/2;
