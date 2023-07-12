@@ -30,19 +30,22 @@ public class LinkedListProblem3 {
         ListNode list = make(1,5,8,2,33,7,14);
         print(list);
         System.out.println();
-        int n = 2;
+        int n = 3;
         print(delete(list,n));
     }
+    //Time Complexity --- O(n)
     private static ListNode delete(ListNode head, int n) {
         ListNode slow=head;
         ListNode fast=head;
         for(int i=1;i<=n;i++){
             fast=fast.next;
         }
+        //traversing to the node right before nth node 
         while(fast.next!=null){
             slow=slow.next;
             fast=fast.next;
         }
+        //connecting previous node of nth node to its next node
         slow.next=slow.next.next;
         return head;
     }
