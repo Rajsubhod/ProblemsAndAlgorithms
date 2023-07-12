@@ -1,0 +1,49 @@
+//Removing nth node from the end of linkedlist
+public class LinkedListProblem3 {
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+      }
+      //Printing LinkedList
+      public static void print(ListNode head){
+          ListNode temp = head;
+          while(temp!=null){
+              System.out.print(temp.val+" ");
+              temp=temp.next;
+          }
+      }
+      //Making LinkedList
+      public static ListNode make(int... val){
+          if(val.length<=0){
+              return new ListNode();
+          }
+          ListNode node = new ListNode(val[val.length-1]);
+          for(int i=val.length-2;i>=0;i--){
+              node = new ListNode(val[i],node);
+          }
+          return node;     
+      }    
+    public static void main(String[] args) {
+        ListNode list = make(1,5,8,2,33,7,14);
+        print(list);
+        System.out.println();
+        int n = 2;
+        print(delete(list,n));
+    }
+    private static ListNode delete(ListNode head, int n) {
+        ListNode slow=head;
+        ListNode fast=head;
+        for(int i=1;i<=n;i++){
+            fast=fast.next;
+        }
+        while(fast.next!=null){
+            slow=slow.next;
+            fast=fast.next;
+        }
+        slow.next=slow.next.next;
+        return head;
+    }
+}
