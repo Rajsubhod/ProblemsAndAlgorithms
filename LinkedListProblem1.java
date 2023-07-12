@@ -1,8 +1,5 @@
 //Given a linked list we want to delete a node in the linked list where the node is given as a paramenter instead of head
-
-import java.util.Arrays;
-import java.util.List;
-
+//Note that the given node is not the last node at any case.
 public class LinkedListProblem1 {
 
     public static class ListNode {
