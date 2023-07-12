@@ -36,7 +36,7 @@ public class LinkedListProblem2 {
         System.out.println(findNodeB(list, n).val);
     }
     //Time Complexity --- O(n)
-    //Uses one loop
+    //Uses one traversal
     private static ListNode findNodeB(ListNode head ,int n) {
         ListNode slow = head;
         ListNode fast = head;
@@ -52,7 +52,7 @@ public class LinkedListProblem2 {
         return slow;
     }
     //Time complexity --- O(n)
-    //Uses two loops
+    //Uses two traversal
     private static ListNode findNode(ListNode head ,int n) {
         ListNode temp = head;
         int length=0;
