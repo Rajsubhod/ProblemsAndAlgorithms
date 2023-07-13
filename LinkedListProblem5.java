@@ -33,13 +33,22 @@ public class LinkedListProblem5 {
         print(list);
         print(findMID(list));
     }
+    //Time Complexity --- O(n)
     private static ListNode findMID(ListNode list) {
         ListNode slow = list;
         ListNode fast = list;
+        //Gives middle node when there are odd number of nodes
+        //This gives the left middle node of linked list when there are even number of node
         while(fast.next!=null && fast.next.next!=null){
             fast=fast.next.next;
             slow=slow.next;
         }
+        //Gives middle node when there are odd number of nodes
+        //This gives the right middle node of linked list when there are even number of node
+        // while(fast!=null && fast.next!=null){
+        //     fast=fast.next.next;
+        //     slow=slow.next;
+        // }
         return slow;
     }
 }
