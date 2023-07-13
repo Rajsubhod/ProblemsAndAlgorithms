@@ -34,7 +34,11 @@ public class LinkedListProblem6 {
         print(deleteMID(list));
     }
     private static ListNode deleteMID(ListNode list) {
-
+        //This means there are only two elments then delete first or last elemnet
+        //Here we are deleting first one
+        if(list.next.next==null){
+            return list.next;
+        }
         ListNode slow=list;
         ListNode fast=list;
         //Deletes middle node when there are odd number of nodes
