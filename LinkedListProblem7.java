@@ -42,6 +42,9 @@ public class LinkedListProblem7 {
     }
 
     private static boolean detecCycle(LinkedListProblem7.ListNode list) {
+        if(list==null){
+            return false;
+        }
         ListNode slow=list;
         ListNode fast=list.next;
         while(fast!=null && fast.next!=null){
