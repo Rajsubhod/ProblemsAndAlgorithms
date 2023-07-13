@@ -35,6 +35,9 @@ public class LinkedListProblem5 {
     }
     //Time Complexity --- O(n)
     private static ListNode findMID(ListNode list) {
+        if(list.next.next==null){
+            return list;
+        }
         ListNode slow = list;
         ListNode fast = list;
         //Gives middle node when there are odd number of nodes
