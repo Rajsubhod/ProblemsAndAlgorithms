@@ -52,6 +52,8 @@ public class LinkedListProblem4 {
         print(list2);
         System.out.println(findintersect(list1,list2));
     }
+    //Time Complexity --- O(n+m) where n & m are the length of two linkedlist
+    //Space Complexity --- O(1)
     private static ListNode findintersect(ListNode l1, ListNode l2) {
         ListNode list1=l1;
         ListNode list2=l2;
@@ -78,6 +80,7 @@ public class LinkedListProblem4 {
             }
         }
         while(list1!=list2){
+            //this commented out code if not much usefull as when list1 or list2 reaching null while will stop as list1=list2=null and we will get null as return also the if condition triger at the very end of the loop so it doesn't even save few iterations either.
             // if(list1==null || list2==null){
             //     return null;
             // }
@@ -86,5 +89,4 @@ public class LinkedListProblem4 {
         }
         return list1;
     }
-
 }
