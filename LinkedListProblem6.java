@@ -34,25 +34,31 @@ public class LinkedListProblem6 {
         print(deleteMID(list));
     }
     private static ListNode deleteMID(ListNode list) {
-        //This means there are only two elments then delete first or last elemnet
+        //This means there are only one elments then delete first or last elemnet
         //Here we are deleting first one
-        if(list.next.next==null){
+        //If we are given two elements and to delete right one then the while can do it but if its said left then while will give error for that write this at start
+        /*
+         if(list.next.next==null){
             return list.next;
+         }
+         */
+        if(list.next==null){
+            return null;
         }
         ListNode slow=list;
         ListNode fast=list;
         //Deletes middle node when there are odd number of nodes
         //This deletes the left middle node of linked list when there are even number of node
-        while(fast.next.next.next!=null && fast.next.next.next.next!=null){
-            slow=slow.next;
-            fast=fast.next.next;
-        }
-        //Deletes middle node when there are odd number of nodes
-        //This deletes the right middle node of linked list when there are even number of node
-        // while(fast.next.next!=null && fast.next.next.next!=null){
+        // while(fast.next.next.next!=null && fast.next.next.next.next!=null){
         //     slow=slow.next;
         //     fast=fast.next.next;
         // }
+        //Deletes middle node when there are odd number of nodes
+        //This deletes the right middle node of linked list when there are even number of node
+        while(fast.next.next!=null && fast.next.next.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
         slow.next=slow.next.next;
         return list;
     }
